@@ -1,0 +1,736 @@
+
+// CreateApplications
+// UpdateApplications
+// GetAllApplications
+// DeleteApplications
+// CreateRoles
+// GetAllRoles
+// UpdateRoles
+// DeleteRoles
+// GetAllRights
+// CreateRights
+// UpdateRights
+// DeleteRights
+// SetRolePropertyMappings
+// DeleteRolePropertyMappings
+
+int iReqMix;
+	
+  Action()
+  {
+
+
+
+	  web_add_auto_header("Content-Type", "text/xml");
+	  web_add_auto_header("charset", "utf-8");
+ 
+	//iReqMix = 1;
+/*	iReqMix = atoi(lr_eval_string("{ReqMix}"));
+
+	switch(iReqMix)
+	{
+		
+        case 1:
+	CreateApplications();
+            break;
+
+        case 2:
+            UpdateApplications();
+            break;
+    
+        case 3:
+             GetAllApplications();
+            break;
+
+
+        case 4:
+            DeleteApplications();
+            break;
+    
+        case 5:
+            CreateRoles();
+            break;
+
+        case 6:
+            GetAllRoles();
+            break;
+    
+        case 7:
+            UpdateRoles();
+            break;
+
+        case 8:
+           DeleteRoles();
+            break;
+
+        case 9:
+            GetAllRights();
+            break;
+    
+		case 10:
+			CreateRights();
+            break; 
+
+		case 11:
+			UpdateRights();
+			break;
+
+		case 12:
+			DeleteRights();
+			break;
+
+		case 13:
+			SetRolePropertyMappings();
+			break;
+
+		case 14:
+			DeleteRolePropertyMappings();
+			break;
+	
+
+	}
+	
+    return 0;
+}
+*/
+
+  //Roles svc
+   CreateApplications()
+    {
+    
+   
+	web_reg_find("Text=<s:Fault>", "Fail=Found", LAST);
+		web_add_header("SOAPAction", "http://eDell.dell.com/ocs/contract/auth/v1/IRolesService/CreateApplications");   
+        web_reg_save_param("Fault", "LB=<s:Fault>", "RB=</s:Fault>", "Notfound=warning", "Ord=All", LAST);
+
+        lr_start_transaction(lr_eval_string(lr_eval_string("{MName}")));
+
+        web_custom_request(lr_eval_string(lr_eval_string("{MName}")),
+		"URL=http://u4vmolmemsvcs31:1000/authorizationservice/V1/RolesService.svc",
+		"Method=POST",
+		"TargetFrame=",
+		"Resource=0",
+		"Referer=",
+		"Body=<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+		"<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:wsa=\"http://schemas.xmlsoap.org/ws/2004/03/addressing\">"
+		//"<soap:Header><wsa:Action>http://eDell.dell.com/ocs/contract/auth/v1/IRolesService/CreateApplications</wsa:Action><wsa:MessageID>uuid:f1ca3a76-497e-448f-9c4e-e0e1ae98379c</wsa:MessageID><wsa:ReplyTo><wsa:Address>http://schemas.xmlsoap.org/ws/2004/03/addressing/role/anonymous</wsa:Address></wsa:ReplyTo><wsa:To>http://u4vmolmemsvcs31:1000/authorizationservice/V1/RolesService.svc</wsa:To></soap:Header>"
+		"<soap:Body>"
+		"<CreateApplications xmlns=\"http://eDell.dell.com/ocs/contract/auth/v1\">"
+		"<requestDC><"
+		"Correlation_ID xsi:nil=\"true\" xmlns=\"http://eDell.dell.com/ocs/schema/v1\" />"
+		"<LoggedInUser_ID xsi:nil=\"true\" xmlns=\"http://eDell.dell.com/ocs/schema/v1\" />"
+		"<ApplicationMasterCreateDC_List xmlns=\"http://eDell.dell.com/ocs/schema/v1\">"
+		"<ApplicationMasterCreateDC>"
+		"<Created_By>Perf_User@Dell.com</Created_By>"
+		"<Created_Date xsi:nil=\"true\" />"
+		"<Application_Desc xsi:nil=\"true\" />"
+		"<Application_Name>Premier Portal{AppName}</Application_Name>"
+		"<IsActive>true</IsActive>"
+		"</ApplicationMasterCreateDC>"
+		"</ApplicationMasterCreateDC_List>"
+		"</requestDC>"
+		"</CreateApplications>"
+		"</soap:Body>"
+		"</soap:Envelope>",
+		LAST);
+        lr_end_transaction(lr_eval_string(lr_eval_string("{MName}")), LR_AUTO);
+    }
+
+   UpdateApplications()
+{
+
+	web_reg_find("Text=<s:Fault>", "Fail=Found", LAST);
+		web_add_header("SOAPAction", "http://eDell.dell.com/ocs/contract/auth/v1/IRolesService/UpdateApplications");   
+        web_reg_save_param("Fault", "LB=<s:Fault>", "RB=</s:Fault>", "Notfound=warning", "Ord=All", LAST);
+
+        lr_start_transaction(lr_eval_string(lr_eval_string("{MName}")));
+
+        web_custom_request(lr_eval_string(lr_eval_string("{MName}")),
+		"URL=http://u4vmolmemsvcs31:1000/authorizationservice/V1/RolesService.svc",
+		"Method=POST",
+		"TargetFrame=",
+		"Resource=0",
+		"Referer=",
+		"Body=<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+		"<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:wsa=\"http://schemas.xmlsoap.org/ws/2004/03/addressing\">"
+		//"<soap:Header><wsa:Action>http://eDell.dell.com/ocs/contract/auth/v1/IRolesService/UpdateApplications</wsa:Action><wsa:MessageID>uuid:c76baccb-0f6a-44a1-a77c-bacbd890b0f4</wsa:MessageID><wsa:ReplyTo><wsa:Address>http://schemas.xmlsoap.org/ws/2004/03/addressing/role/anonymous</wsa:Address></wsa:ReplyTo><wsa:To>http://u4vmolmemsvcs31:1000/authorizationservice/V1/RolesService.svc</wsa:To></soap:Header>"
+		"<soap:Body>"
+		"<UpdateApplications xmlns=\"http://eDell.dell.com/ocs/contract/auth/v1\">"
+		"<requestDC>"
+		"<Correlation_ID xsi:nil=\"true\" xmlns=\"http://eDell.dell.com/ocs/schema/v1\" />"
+		"<LoggedInUser_ID xsi:nil=\"true\" xmlns=\"http://eDell.dell.com/ocs/schema/v1\" /><"
+		"ApplicationMasterUpdateDC_List xmlns=\"http://eDell.dell.com/ocs/schema/v1\">"
+		"<ApplicationMasterUpdateDC>"
+		"<LastUpdated_By>Perf_User@Dell.com</LastUpdated_By>"
+		"<LastUpdated_Date xsi:nil=\"true\" />"
+		"<Application_Desc>Premier Portal Roles/Rights1</Application_Desc>"
+		"<Application_ID>{ApplicationID}</Application_ID>"
+		"<Application_Name>Premier Portal{AppName}</Application_Name>"
+		"<IsActive>true</IsActive>"
+		"</ApplicationMasterUpdateDC>"
+		"</ApplicationMasterUpdateDC_List>"
+		"</requestDC>"
+		"</UpdateApplications>"
+		"</soap:Body>"
+		"</soap:Envelope>",
+		LAST);
+    lr_end_transaction(lr_eval_string(lr_eval_string("{MName}")), LR_AUTO);
+}
+
+GetAllApplications()
+    {
+    
+    
+	web_reg_find("Text=<s:Fault>", "Fail=Found", LAST);
+		web_add_header("SOAPAction", "http://eDell.dell.com/ocs/contract/auth/v1/IRolesService/GetAllApplications");  
+        web_reg_save_param("Fault", "LB=<s:Fault>", "RB=</s:Fault>", "Notfound=warning", "Ord=All", LAST);
+
+        lr_start_transaction(lr_eval_string(lr_eval_string("{MName}")));
+
+        web_custom_request(lr_eval_string(lr_eval_string("{MName}")),
+		"URL=http://u4vmolmemsvcs31:1000/authorizationservice/V1/RolesService.svc",
+		"Method=POST",
+		"TargetFrame=",
+		"Resource=0",
+		"Referer=",
+		"Body=<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+		"<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:wsa=\"http://schemas.xmlsoap.org/ws/2004/03/addressing\">"
+		//"<soap:Header><wsa:Action>http://eDell.dell.com/ocs/contract/auth/v1/IRolesService/GetAllApplications</wsa:Action><wsa:MessageID>uuid:6a230341-f9be-4006-92c9-4eec7e1b531d</wsa:MessageID><wsa:ReplyTo><wsa:Address>http://schemas.xmlsoap.org/ws/2004/03/addressing/role/anonymous</wsa:Address></wsa:ReplyTo><wsa:To>http://u4vmolmemsvcs31:1000/authorizationservice/V1/RolesService.svc</wsa:To></soap:Header>"
+		"<soap:Body>"
+		"<GetAllApplications xmlns=\"http://eDell.dell.com/ocs/contract/auth/v1\">"
+		"<requestDC><Correlation_ID xsi:nil=\"true\" xmlns=\"http://eDell.dell.com/ocs/schema/v1\" />"
+		"<LoggedInUser_ID xsi:nil=\"true\" xmlns=\"http://eDell.dell.com/ocs/schema/v1\" />"
+		"<ApplicationId_DC xmlns=\"http://eDell.dell.com/ocs/schema/v1\">"
+		"<LastUpdated_By xsi:nil=\"true\" />"
+		"<LastUpdated_Date xsi:nil=\"true\" />"
+		"<Application_ID>{ApplicationID}</Application_ID>"
+		"</ApplicationId_DC>"
+		"<IsActive xmlns=\"http://eDell.dell.com/ocs/schema/v1\">true</IsActive>"
+		"</requestDC>"
+		"</GetAllApplications>"
+		"</soap:Body>"
+		"</soap:Envelope>",
+		LAST);
+    lr_end_transaction(lr_eval_string(lr_eval_string("{MName}")), LR_AUTO);
+    }
+DeleteApplications()
+ {
+	 web_reg_find("Text=<s:Fault>", "Fail=Found", LAST);
+		 web_add_header("SOAPAction", "http://eDell.dell.com/ocs/contract/auth/v1/IRolesService/DeleteApplications");  
+		 web_reg_save_param("Fault", "LB=<s:Fault>", "RB=</s:Fault>", "Notfound=warning", "Ord=All", LAST);
+
+		 lr_start_transaction(lr_eval_string(lr_eval_string("{MName}")));
+
+	wweb_custom_request(lr_eval_string(lr_eval_string("{MName}")),
+		"URL=http://u4vmolmemsvcs31:1000/authorizationservice/V1/RolesService.svc",
+		"Method=POST",
+		"TargetFrame=",
+		"Resource=0",
+		"Referer=",
+		"Body=<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+		"<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:wsa=\"http://schemas.xmlsoap.org/ws/2004/03/addressing\">"
+		//"<soap:Header><wsa:Action>http://eDell.dell.com/ocs/contract/auth/v1/IRolesService/DeleteApplications</wsa:Action><wsa:MessageID>uuid:e4da6ddf-014e-46cb-8b13-131d54f3ffe7</wsa:MessageID><wsa:ReplyTo><wsa:Address>http://schemas.xmlsoap.org/ws/2004/03/addressing/role/anonymous</wsa:Address></wsa:ReplyTo><wsa:To>http://u4vmolmemsvcs31:1000/authorizationservice/V1/RolesService.svc</wsa:To></soap:Header>"
+		"<soap:Body>"
+		"<DeleteApplications xmlns=\"http://eDell.dell.com/ocs/contract/auth/v1\">"
+		"<requestDC>"
+		"<Correlation_ID xsi:nil=\"true\" xmlns=\"http://eDell.dell.com/ocs/schema/v1\" />"
+		"<LoggedInUser_ID xsi:nil=\"true\" xmlns=\"http://eDell.dell.com/ocs/schema/v1\" />"
+		"<ApplicationIdDC_List xmlns=\"http://eDell.dell.com/ocs/schema/v1\"><ApplicationIdDC>"
+		"<LastUpdated_By>Perf_User@Dell.com</LastUpdated_By>"
+		"<LastUpdated_Date xsi:nil=\"true\" />"
+		"<Application_ID>{ApplicationID}</Application_ID>"
+		"</ApplicationIdDC>"
+		"</ApplicationIdDC_List>"
+		"</requestDC>"
+		"</DeleteApplications>"
+		"</soap:Body>"
+		"</soap:Envelope>",
+		LAST);
+	  lr_end_transaction(lr_eval_string(lr_eval_string("{MName}")), LR_AUTO);
+
+ }
+
+CreateRoles()
+{
+
+
+    web_reg_find("Text=<s:Fault>", "Fail=Found", LAST);
+    web_reg_save_param("Fault", "LB=<s:Fault>", "RB=</s:Fault>", "Notfound=warning", "Ord=All", LAST);
+
+    lr_start_transaction(lr_eval_string(lr_eval_string("{MName}")));
+
+    web_add_header("SOAPAction", "http://eDell.dell.com/ocs/contract/auth/v1/IRolesService/CreateRoles");  
+	web_custom_request(lr_eval_string(lr_eval_string("{MName}")),
+		"URL=http://u4vmolmemsvcs31:1000/authorizationservice/V1/RolesService.svc",
+		"Method=POST",
+		"TargetFrame=",
+		"Resource=0",
+		"Referer=",
+		"Body=<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n"
+// 		"  <s:Header>\r\n"
+// 		"    <Action s:mustUnderstand=\"1\" xmlns=\"http://schemas.microsoft.com/ws/2005/05/addressing/none\">http://eDell.dell.com/ocs/contract/auth/v1/IRolesService/CreateRoles</Action>\r\n"
+// 		"  </s:Header>\r\n"
+		"  <s:Body>\r\n"
+		"    <CreateRoles xmlns=\"http://eDell.dell.com/ocs/contract/auth/v1\">\r\n"
+		"      <requestDC xmlns:d4p1=\"http://eDell.dell.com/ocs/schema/v1\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\">\r\n"
+		"        <d4p1:Correlation_ID i:nil=\"true\" />\r\n"
+		"        <d4p1:LoggedInUser_ID i:nil=\"true\" />\r\n"
+		"        <d4p1:RolesMasterCreateDC_List>\r\n"
+		"          <d4p1:RolesMasterCreateDC>\r\n"
+		"            <d4p1:Created_By>Perf_Test_User</d4p1:Created_By>\r\n"
+		"            <d4p1:Created_Date i:nil=\"true\" />\r\n"
+		"            <d4p1:Application_ID>{ApplicationID}</d4p1:Application_ID>\r\n"
+		"            <d4p1:IsActive>false</d4p1:IsActive>\r\n"
+		"            <d4p1:PropertyMasterUpdateDC_List />\r\n"
+		"            <d4p1:Role_Code>SEGA</d4p1:Role_Code>\r\n"
+		"            <d4p1:Role_Description>RCOMM Buyer</d4p1:Role_Description>\r\n"
+		"            <d4p1:Role_Name>Buyer</d4p1:Role_Name>\r\n"
+		"          </d4p1:RolesMasterCreateDC>\r\n"
+		"        </d4p1:RolesMasterCreateDC_List>\r\n"
+		"      </requestDC>\r\n"
+		"    </CreateRoles>\r\n"
+		"  </s:Body>\r\n"
+		"</s:Envelope>",
+		LAST);
+    lr_end_transaction(lr_eval_string(lr_eval_string("{MName}")), LR_AUTO);
+    }
+GetAllRoles()
+ {
+ 
+    
+
+	web_reg_find("Text=<s:Fault>", "Fail=Found", LAST);
+		web_add_header("SOAPAction", "http://eDell.dell.com/ocs/contract/auth/v1/IRolesService/GetAllRoles");  
+        web_reg_save_param("Fault", "LB=<s:Fault>", "RB=</s:Fault>", "Notfound=warning", "Ord=All", LAST);
+
+        lr_start_transaction(lr_eval_string(lr_eval_string("{MName}")));
+
+        web_custom_request(lr_eval_string(lr_eval_string("{MName}")),
+		"URL=http://u4vmolmemsvcs31:1000/authorizationservice/V1/RolesService.svc",
+		"Method=POST",
+		"TargetFrame=",
+		"Resource=0",
+		"Referer=",
+		"Body=<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+		"<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:wsa=\"http://schemas.xmlsoap.org/ws/2004/03/addressing\">"
+		//"<soap:Header><wsa:Action>http://eDell.dell.com/ocs/contract/auth/v1/IRolesService/GetAllRoles</wsa:Action><wsa:MessageID>uuid:f2b22092-a0d9-45ed-9fe2-d88f5df95c1d</wsa:MessageID><wsa:ReplyTo><wsa:Address>http://schemas.xmlsoap.org/ws/2004/03/addressing/role/anonymous</wsa:Address></wsa:ReplyTo><wsa:To>http://u4vmolmemsvcs31:1000/authorizationservice/V1/RolesService.svc</wsa:To></soap:Header>"
+		"<soap:Body>"
+		"<GetAllRoles xmlns=\"http://eDell.dell.com/ocs/contract/auth/v1\"><requestDC>"
+		"<Correlation_ID xsi:nil=\"true\" xmlns=\"http://eDell.dell.com/ocs/schema/v1\" />"
+		"<LoggedInUser_ID xsi:nil=\"true\" xmlns=\"http://eDell.dell.com/ocs/schema/v1\" />"
+		"<ApplicationId_DC xmlns=\"http://eDell.dell.com/ocs/schema/v1\"><LastUpdated_By xsi:nil=\"true\" />"
+		"<LastUpdated_Date xsi:nil=\"true\" />"
+		"<Application_ID>{ApplicationID}</Application_ID>"
+		"</ApplicationId_DC><IsActive xmlns=\"http://eDell.dell.com/ocs/schema/v1\">true</IsActive>"
+		"<IsRightsRequired xmlns=\"http://eDell.dell.com/ocs/schema/v1\">true</IsRightsRequired>"
+		"<RoleId_DC xmlns=\"http://eDell.dell.com/ocs/schema/v1\"><LastUpdated_By xsi:nil=\"true\" />"
+		"<LastUpdated_Date xsi:nil=\"true\" />"
+		"<Role_ID>84B8AF06-4EF2-4F80-9401-7D021772FE6F</Role_ID>"
+		"</RoleId_DC>"
+		"</requestDC>"
+		"</GetAllRoles>"
+		"</soap:Body>"
+		"</soap:Envelope>",
+		LAST);
+    lr_end_transaction(lr_eval_string(lr_eval_string("{MName}")), LR_AUTO);
+ }
+UpdateRoles()
+    {
+    
+    
+	web_reg_find("Text=<s:Fault>", "Fail=Found", LAST);
+		web_add_header("SOAPAction", "http://eDell.dell.com/ocs/contract/auth/v1/IRolesService/UpdateRoles");  
+        web_reg_save_param("Fault", "LB=<s:Fault>", "RB=</s:Fault>", "Notfound=warning", "Ord=All", LAST);
+
+        lr_start_transaction(lr_eval_string(lr_eval_string("{MName}")));
+
+        web_custom_request(lr_eval_string(lr_eval_string("{MName}")),
+		"URL=http://u4vmolmemsvcs31:1000/authorizationservice/V1/RolesService.svc",
+		"Method=POST",
+		"TargetFrame=",
+		"Resource=0",
+		"Referer=",
+		"Body=<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+		"<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:wsa=\"http://schemas.xmlsoap.org/ws/2004/03/addressing\">"
+		//"<soap:Header><wsa:Action>http://eDell.dell.com/ocs/contract/auth/v1/IRolesService/UpdateRoles</wsa:Action><wsa:MessageID>uuid:3e627128-713d-4d73-9857-451a0f3fbc50</wsa:MessageID><wsa:ReplyTo><wsa:Address>http://schemas.xmlsoap.org/ws/2004/03/addressing/role/anonymous</wsa:Address></wsa:ReplyTo><wsa:To>http://u4vmolmemsvcs31:1000/authorizationservice/V1/RolesService.svc</wsa:To></soap:Header>"
+		"<soap:Body>"
+		"<UpdateRoles xmlns=\"http://eDell.dell.com/ocs/contract/auth/v1\">"
+		"<requestDC>"
+		"<Correlation_ID xsi:nil=\"true\" xmlns=\"http://eDell.dell.com/ocs/schema/v1\" />"
+		"<LoggedInUser_ID xsi:nil=\"true\" xmlns=\"http://eDell.dell.com/ocs/schema/v1\" />"
+		"<RolesMasterUpdateDC_List xmlns=\"http://eDell.dell.com/ocs/schema/v1\"><RolesMasterUpdateDC>"
+		"<LastUpdated_By>Perf_User@Dell.com</LastUpdated_By>"
+		"<LastUpdated_Date xsi:nil=\"true\" />"
+		"<Application_ID>{ApplicationID}</Application_ID>"
+		"<Application_Name_AdditionalDC xsi:nil=\"true\" />"
+		"<IsActive>true</IsActive><PropertyMasterUpdateDC_List xsi:nil=\"true\" /><Role_Code xsi:nil=\"true\" />"
+		"<Role_Description>Customer site-wide admin{AppName}</Role_Description>"
+		"<Role_ID>84B8AF06-4EF2-4F80-9401-7D021772FE6F</Role_ID"
+		"><Role_Name>SiteAdmin1</Role_Name>"
+		"</RolesMasterUpdateDC>"
+		"</RolesMasterUpdateDC_List>"
+		"</requestDC>"
+		"</UpdateRoles>"
+		"</soap:Body>"
+		"</soap:Envelope>",
+		LAST);
+    lr_end_transaction(lr_eval_string(lr_eval_string("{MName}")), LR_AUTO);
+    }
+
+DeleteRoles()
+{
+web_reg_find("Text=<s:Fault>", "Fail=Found", LAST);
+		web_add_header("SOAPAction", "http://eDell.dell.com/ocs/contract/auth/v1/IRolesService/DeleteRoles");    
+        web_reg_save_param("Fault", "LB=<s:Fault>", "RB=</s:Fault>", "Notfound=warning", "Ord=All", LAST);
+
+        lr_start_transaction(lr_eval_string(lr_eval_string("{MName}")));
+        
+	web_custom_request(lr_eval_string(lr_eval_string("{MName}")),
+		"URL=http://u4vmolmemsvcs31:1000/authorizationservice/V1/RolesService.svc",
+		"Method=POST",
+		"TargetFrame=",
+		"Resource=0",
+		"Referer=",
+		"Body=<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+		"<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:wsa=\"http://schemas.xmlsoap.org/ws/2004/03/addressing\">"
+		//"<soap:Header><wsa:Action>http://eDell.dell.com/ocs/contract/auth/v1/IRolesService/DeleteRoles</wsa:Action><wsa:MessageID>uuid:b3507f6b-cb40-41f0-975c-4d0830810138</wsa:MessageID><wsa:ReplyTo><wsa:Address>http://schemas.xmlsoap.org/ws/2004/03/addressing/role/anonymous</wsa:Address></wsa:ReplyTo><wsa:To>http://u4vmolmemsvcs31:1000/authorizationservice/V1/RolesService.svc</wsa:To></soap:Header>"
+		"<soap:Body>"
+		"<DeleteRoles xmlns=\"http://eDell.dell.com/ocs/contract/auth/v1\">"
+		"<requestDC>"
+		"<Correlation_ID xsi:nil=\"true\" xmlns=\"http://eDell.dell.com/ocs/schema/v1\" />"
+		"<LoggedInUser_ID xsi:nil=\"true\" xmlns=\"http://eDell.dell.com/ocs/schema/v1\" />"
+		"<RoleIdDC_List xmlns=\"http://eDell.dell.com/ocs/schema/v1\"><RoleIdDC>"
+		"<LastUpdated_By>Perf_User@Dell.com</LastUpdated_By>"
+		"<LastUpdated_Date xsi:nil=\"true\" />"
+		"<Role_ID>84B8AF06-4EF2-4F80-9401-7D021772FE6F</Role_ID>"
+		"</RoleIdDC>"
+		"</RoleIdDC_List>"
+		"</requestDC>"
+		"</DeleteRoles>"
+		"</soap:Body>"
+		"</soap:Envelope>",
+		LAST);
+lr_end_transaction(lr_eval_string(lr_eval_string("{MName}")), LR_AUTO);
+}
+
+ GetAllRights()
+ {
+ 
+  
+	web_reg_find("Text=<s:Fault>", "Fail=Found", LAST);
+		web_add_header("SOAPAction", "http://eDell.dell.com/ocs/contract/auth/v1/IRolesService/GetAllRights");    
+        web_reg_save_param("Fault", "LB=<s:Fault>", "RB=</s:Fault>", "Notfound=warning", "Ord=All", LAST);
+
+        lr_start_transaction(lr_eval_string(lr_eval_string("{MName}")));
+
+        web_custom_request(lr_eval_string(lr_eval_string("{MName}")),
+		"URL=http://u4vmolmemsvcs31:1000/authorizationservice/V1/RolesService.svc",
+		"Method=POST",
+		"TargetFrame=",
+		"Resource=0",
+		"Referer=",
+		"Body=<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+		"<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:wsa=\"http://schemas.xmlsoap.org/ws/2004/03/addressing\">"
+		//"<soap:Header><wsa:Action>http://eDell.dell.com/ocs/contract/auth/v1/IRolesService/GetAllRights</wsa:Action><wsa:MessageID>uuid:9e3f404a-d99f-4c0e-932e-91594dec2ce3</wsa:MessageID><wsa:ReplyTo><wsa:Address>http://schemas.xmlsoap.org/ws/2004/03/addressing/role/anonymous</wsa:Address></wsa:ReplyTo><wsa:To>http://u4vmolmemsvcs31:1000/authorizationservice/V1/RolesService.svc</wsa:To></soap:Header>"
+		"<soap:Body>"
+		"<GetAllRights xmlns=\"http://eDell.dell.com/ocs/contract/auth/v1\">"
+		"<requestDC>"
+		"<Correlation_ID xsi:nil=\"true\" xmlns=\"http://eDell.dell.com/ocs/schema/v1\" />"
+		"<LoggedInUser_ID xsi:nil=\"true\" xmlns=\"http://eDell.dell.com/ocs/schema/v1\" />"
+		"<ApplicationId_DC xmlns=\"http://eDell.dell.com/ocs/schema/v1\"><LastUpdated_By xsi:nil=\"true\" />"
+		"<LastUpdated_Date xsi:nil=\"true\" />"
+		"<Application_ID>{ApplicationID}</Application_ID>"
+		"</ApplicationId_DC><IsActive xmlns=\"http://eDell.dell.com/ocs/schema/v1\">true</IsActive>"
+		"<PropertyId_DC xmlns=\"http://eDell.dell.com/ocs/schema/v1\">"
+		"<LastUpdated_By xsi:nil=\"true\" /><LastUpdated_Date xsi:nil=\"true\" />"
+		"<Property_ID>AF605555-77EF-4F3B-983C-EE96A8B6BFF2</Property_ID>"
+		"</PropertyId_DC>"
+		"</requestDC>"
+		"</GetAllRights>"
+		"</soap:Body>"
+		"</soap:Envelope>",
+		LAST);
+    lr_end_transaction(lr_eval_string(lr_eval_string("{MName}")), LR_AUTO);
+ }
+
+CreateRights()
+{
+
+    
+	web_reg_find("Text=<s:Fault>", "Fail=Found", LAST);
+		web_add_header("SOAPAction", "http://eDell.dell.com/ocs/contract/auth/v1/IRolesService/CreateRights");  
+        web_reg_save_param("Fault", "LB=<s:Fault>", "RB=</s:Fault>", "Notfound=warning", "Ord=All", LAST);
+
+        lr_start_transaction(lr_eval_string(lr_eval_string("{MName}")));
+
+        web_custom_request(lr_eval_string(lr_eval_string("{MName}")),
+		"URL=http://u4vmolmemsvcs31:1000/authorizationservice/V1/RolesService.svc",
+		"Method=POST",
+		"TargetFrame=",
+		"Resource=0",
+		"Referer=",
+		"Body=<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+		"<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:wsa=\"http://schemas.xmlsoap.org/ws/2004/03/addressing\">"
+		//"<soap:Header><wsa:Action>http://eDell.dell.com/ocs/contract/auth/v1/IRolesService/CreateRights</wsa:Action><wsa:MessageID>uuid:bcc78df6-2e97-4b76-88f2-7a9dcc1ca43a</wsa:MessageID><wsa:ReplyTo><wsa:Address>http://schemas.xmlsoap.org/ws/2004/03/addressing/role/anonymous</wsa:Address></wsa:ReplyTo><wsa:To>http://u4vmolmemsvcs31:1000/authorizationservice/V1/RolesService.svc</wsa:To></soap:Header>"
+		"<soap:Body>"
+		"<CreateRights xmlns=\"http://eDell.dell.com/ocs/contract/auth/v1\">"
+		"<requestDC><Correlation_ID xsi:nil=\"true\" xmlns=\"http://eDell.dell.com/ocs/schema/v1\" />"
+		"<LoggedInUser_ID xsi:nil=\"true\" xmlns=\"http://eDell.dell.com/ocs/schema/v1\" />"
+		"<PropertyMasterCreateDC_List xmlns=\"http://eDell.dell.com/ocs/schema/v1\">"
+		"<PropertyMasterCreateDC>"
+		"<Created_By>Perf_Test_User</Created_By>"
+		"<Created_Date xsi:nil=\"true\" />"
+		"<Application_ID>{ApplicationID}</Application_ID>"
+		"<Property_Metadata xsi:nil=\"true\" />"
+		"<Property_Name>Reports for Segment</Property_Name>"
+		"</PropertyMasterCreateDC>"
+		"</PropertyMasterCreateDC_List>"
+		"</requestDC>"
+		"</CreateRights>"
+		"</soap:Body>"
+		"</soap:Envelope>",
+		LAST);
+    lr_end_transaction(lr_eval_string(lr_eval_string("{MName}")), LR_AUTO);
+}
+
+UpdateRights()
+{
+	web_reg_find("Text=<s:Fault>", "Fail=Found", LAST);
+		 web_add_header("SOAPAction", "http://eDell.dell.com/ocs/contract/auth/v1/IRolesService/UpdateRights");  
+		 web_reg_save_param("Fault", "LB=<s:Fault>", "RB=</s:Fault>", "Notfound=warning", "Ord=All", LAST);
+
+		 lr_start_transaction(lr_eval_string(lr_eval_string("{MName}")));
+
+lr_save_string(lr_eval_string(lr_eval_string(lr_eval_string("<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\">"
+// 			"<s:Header>"
+// 				"<Action s:mustUnderstand=\"1\" xmlns=\"http://schemas.microsoft.com/ws/2005/05/addressing/none\">http://eDell.dell.com/ocs/contract/auth/v1/IRolesService/UpdateRights</Action>"
+// 			"</s:Header>"
+			"<s:Body>"
+				"<UpdateRights xmlns=\"http://eDell.dell.com/ocs/contract/auth/v1\">"
+					"<requestDC xmlns:d4p1=\"http://eDell.dell.com/ocs/schema/v1\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\">"
+						"<d4p1:PropertyMasterUpdateDC_List>"
+							"<d4p1:PropertyMasterUpdateDC>"
+								"<d4p1:LastUpdated_By>PerfTestUser</d4p1:LastUpdated_By>"
+								"<d4p1:LastUpdated_Date>2011-08-04T14:26:00</d4p1:LastUpdated_Date>"
+								"<d4p1:Application_ID>{ApplicationID}</d4p1:Application_ID>"
+								"<d4p1:IsActive>false</d4p1:IsActive>"
+								"<d4p1:Property_ID>71f62971-a58f-4e54-9829-22e91cccba7c</d4p1:Property_ID>"
+								"<d4p1:Property_Metadata>TestPropertyMetadata</d4p1:Property_Metadata>"
+								"<d4p1:Property_Name>TestPropertyName</d4p1:Property_Name>"
+							"</d4p1:PropertyMasterUpdateDC>"
+						"</d4p1:PropertyMasterUpdateDC_List>"
+					"</requestDC>"
+				"</UpdateRights>"
+			"</s:Body>"
+		"</s:Envelope>"))), "Request");
+
+
+	web_custom_request(lr_eval_string(lr_eval_string("{MName}")),
+		"URL=http://u4vmolmemsvcs31:1000/authorizationservice/V1/RolesService.svc",
+		"Method=POST",
+		"TargetFrame=",
+		"Resource=0",
+		"Referer=",
+		"Body={Request}",
+		LAST);
+lr_end_transaction(lr_eval_string(lr_eval_string("{MName}")), LR_AUTO);
+}
+DeleteRights()
+ {web_reg_find("Text=<s:Fault>", "Fail=Found", LAST);
+		 web_add_header("SOAPAction", "http://eDell.dell.com/ocs/contract/auth/v1/IRolesService/DeleteRights");  
+		 web_reg_save_param("Fault", "LB=<s:Fault>", "RB=</s:Fault>", "Notfound=warning", "Ord=All", LAST);
+
+		 lr_start_transaction(lr_eval_string(lr_eval_string("{MName}")));
+
+	web_custom_request(lr_eval_string(lr_eval_string("{MName}")),
+		"URL=http://u4vmolmemsvcs31:1000/authorizationservice/V1/RolesService.svc",
+		"Method=POST",
+		"TargetFrame=",
+		"Resource=0",
+		"Referer=",
+		"Body=<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+		"<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:wsa=\"http://schemas.xmlsoap.org/ws/2004/03/addressing\">"
+		//"<soap:Header><wsa:Action>http://eDell.dell.com/ocs/contract/auth/v1/IRolesService/DeleteRights</wsa:Action><wsa:MessageID>uuid:afe546a4-dd79-4dac-80e6-f3dc891cf05c</wsa:MessageID><wsa:ReplyTo><wsa:Address>http://schemas.xmlsoap.org/ws/2004/03/addressing/role/anonymous</wsa:Address></wsa:ReplyTo><wsa:To>http://u4vmolmemsvcs31:1000/authorizationservice/V1/RolesService.svc</wsa:To></soap:Header>"
+		"<soap:Body>"
+		"<DeleteRights xmlns=\"http://eDell.dell.com/ocs/contract/auth/v1\">"
+		"<requestDC>"
+		"<Correlation_ID xsi:nil=\"true\" xmlns=\"http://eDell.dell.com/ocs/schema/v1\" />"
+		"<LoggedInUser_ID xsi:nil=\"true\" xmlns=\"http://eDell.dell.com/ocs/schema/v1\" />"
+		"<PropertyIdDC_List xmlns=\"http://eDell.dell.com/ocs/schema/v1\"><PropertyIdDC>"
+		"<LastUpdated_By>Perf_User@Dell.com</LastUpdated_By>"
+		"<LastUpdated_Date xsi:nil=\"true\" />"
+		"<Property_ID>AF605555-77EF-4F3B-983C-EE96A8B6BFF2</Property_ID>"
+		"</PropertyIdDC>"
+		"</PropertyIdDC_List>"
+		"</requestDC>"
+		"</DeleteRights>"
+		"</soap:Body>"
+		"</soap:Envelope>",
+		LAST);
+lr_end_transaction(lr_eval_string(lr_eval_string("{MName}")), LR_AUTO);
+
+ }
+
+
+
+SetRolePropertyMappings()
+{
+
+    
+	web_reg_find("Text=<s:Fault>", "Fail=Found", LAST);
+		web_add_header("SOAPAction", "http://eDell.dell.com/ocs/contract/auth/v1/IRolesService/SetRolePropertyMappings");  
+        web_reg_save_param("Fault", "LB=<s:Fault>", "RB=</s:Fault>", "Notfound=warning", "Ord=All", LAST);
+
+        lr_start_transaction(lr_eval_string(lr_eval_string("{MName}")));
+
+        web_custom_request(lr_eval_string(lr_eval_string("{MName}")),
+		"URL=http://u4vmolmemsvcs31:1000/authorizationservice/V1/RolesService.svc",
+		"Method=POST",
+		"TargetFrame=",
+		"Resource=0",
+		"Referer=",
+		"Body=<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+		"<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:wsa=\"http://schemas.xmlsoap.org/ws/2004/03/addressing\">"
+		//"<soap:Header><wsa:Action>http://eDell.dell.com/ocs/contract/auth/v1/IRolesService/SetRolePropertyMappings</wsa:Action><wsa:MessageID>uuid:a1c20149-209b-4fe5-80a0-6885e669a95e</wsa:MessageID><wsa:ReplyTo><wsa:Address>http://schemas.xmlsoap.org/ws/2004/03/addressing/role/anonymous</wsa:Address></wsa:ReplyTo><wsa:To>http://u4vmolmemsvcs31:1000/authorizationservice/V1/RolesService.svc</wsa:To></soap:Header>"
+		"<soap:Body>"
+		"<SetRolePropertyMappings xmlns=\"http://eDell.dell.com/ocs/contract/auth/v1\">"
+		"<requestDC>"
+		"<LastUpdated_By xsi:nil=\"true\" xmlns=\"http://eDell.dell.com/ocs/schema/v1\" />"
+		"<LastUpdated_Date xsi:nil=\"true\" xmlns=\"http://eDell.dell.com/ocs/schema/v1\" />"
+		"<Application_ID xsi:nil=\"true\" xmlns=\"http://eDell.dell.com/ocs/schema/v1\" />"
+		"<Application_Name_AdditionalDC xsi:nil=\"true\" xmlns=\"http://eDell.dell.com/ocs/schema/v1\" />"
+		"<PropertyMasterUpdateDC_List xmlns=\"http://eDell.dell.com/ocs/schema/v1\">"
+		"<PropertyMasterUpdateDC>"
+		"<LastUpdated_By>Perf_User@Dell.com</LastUpdated_By>"
+		"<LastUpdated_Date xsi:nil=\"true\" />"
+		"<Application_ID xsi:nil=\"true\" />"
+		"<Application_Name_AdditionalDC xsi:nil=\"true\" />"
+		"<Property_ID>AF605555-77EF-4F3B-983C-EE96A8B6BFF2</Property_ID>"
+		"<Property_Metadata xsi:nil=\"true\" />"
+		"<Property_Name xsi:nil=\"true\" />"
+		"</PropertyMasterUpdateDC>"
+		"</PropertyMasterUpdateDC_List>"
+		"<Role_Code xmlns=\"http://eDell.dell.com/ocs/schema/v1\" />"
+		"<Role_Description xsi:nil=\"true\" xmlns=\"http://eDell.dell.com/ocs/schema/v1\" />"
+		"<Role_ID xmlns=\"http://eDell.dell.com/ocs/schema/v1\">84B8AF06-4EF2-4F80-9401-7D021772FE6F</Role_ID>"
+		"<Role_Name xsi:nil=\"true\" xmlns=\"http://eDell.dell.com/ocs/schema/v1\" />"
+		"</requestDC>"
+		"</SetRolePropertyMappings>"
+		"</soap:Body>"
+		"</soap:Envelope>",
+		LAST);
+    lr_end_transaction(lr_eval_string(lr_eval_string("{MName}")), LR_AUTO);
+}
+
+
+
+DeleteRolePropertyMappings()
+{
+web_reg_find("Text=<s:Fault>", "Fail=Found", LAST);
+		web_add_header("SOAPAction", "http://eDell.dell.com/ocs/contract/auth/v1/IRolesService/DeleteRolePropertyMappings");  
+        web_reg_save_param("Fault", "LB=<s:Fault>", "RB=</s:Fault>", "Notfound=warning", "Ord=All", LAST);
+
+        lr_start_transaction(lr_eval_string(lr_eval_string("{MName}")));
+lr_save_string(lr_eval_string(lr_eval_string(lr_eval_string("<s:Envelope xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\">"
+// 			"<s:Header>"
+// 				"<Action s:mustUnderstand=\"1\" xmlns=\"http://schemas.microsoft.com/ws/2005/05/addressing/none\">http://eDell.dell.com/ocs/contract/auth/v1/IRolesService/DeleteRolePropertyMappings</Action>"
+// 			"</s:Header>"
+			"<s:Body>"
+				"<DeleteRolePropertyMappings xmlns=\"http://eDell.dell.com/ocs/contract/auth/v1\">"
+					"<requestDC xmlns:d4p1=\"http://eDell.dell.com/ocs/schema/v1\" xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\">"
+						"<d4p1:RolesMasterUpdate_DC>"
+							"<d4p1:LastUpdated_By>PerfTestUser</d4p1:LastUpdated_By>"
+							"<d4p1:LastUpdated_Date>2011-08-04T14:28:00</d4p1:LastUpdated_Date>"
+							"<d4p1:Property_ID_List xmlns:d6p1=\"http://schemas.datacontract.org/2004/07/System\">"
+								"<d6p1:guid>c7194596-1bfb-4871-8654-d641a8eebac5</d6p1:guid>"
+							"</d4p1:Property_ID_List>"
+							"<d4p1:Role_ID>a46f5a2f-c72f-491a-bbd2-817d07f7ad27</d4p1:Role_ID>"
+						"</d4p1:RolesMasterUpdate_DC>"
+					"</requestDC>"
+				"</DeleteRolePropertyMappings>"
+			"</s:Body>"
+		"</s:Envelope>"))), "Request");
+	web_custom_request(lr_eval_string(lr_eval_string("{MName}")),
+		"URL=http://u4vmolmemsvcs31:1000/authorizationservice/V1/RolesService.svc",
+		"Method=POST",
+		"TargetFrame=",
+		"Resource=0",
+		"Referer=",
+		"Body={Request}",
+		LAST);
+	lr_end_transaction(lr_eval_string(lr_eval_string("{MName}")), LR_AUTO);
+}
+
+//     GetAllRolesBySearch()
+//     {
+//
+//
+// 	web_reg_find("Text=<s:Fault>", "Fail=Found", LAST);
+// 		web_add_header("SOAPAction", "http://eDell.dell.com/ocs/contract/auth/v1/IRolesService/GetAllRolesBySearch");
+//         web_reg_save_param("Fault", "LB=<s:Fault>", "RB=</s:Fault>", "Notfound=warning", "Ord=All", LAST);
+//
+//         lr_start_transaction(lr_eval_string(lr_eval_string("{MName}")));
+//
+//         web_custom_request("web_custom_request",
+// 		"URL=http://u4vmolmemsvcs31:1000/authorizationservice/V1/RolesService.svc",
+// 		"Method=POST",
+// 		"TargetFrame=",
+// 		"Resource=0",
+// 		"Referer=",
+// 		"Body=<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:wsa=\"http://schemas.xmlsoap.org/ws/2004/03/addressing\"><soap:Header><wsa:Action>http://eDell.dell.com/ocs/contract/auth/v1/IRolesService/GetAllRolesBySearch</wsa:Action><wsa:MessageID>uuid:3fecb989-7bc0-4637-9265-10dd27392faa</wsa:MessageID><wsa:ReplyTo><wsa:Address>http://schemas.xmlsoap.org/ws/2004/03/addressing/role/anonymous</wsa:Address></wsa:ReplyTo><wsa:To>http://u4vmolmemsvcs31:1000/authorizationservice/V1/RolesService.svc</wsa:To></soap:Header><soap:Body><GetAllRolesBySearch xmlns=\"http://eDell.dell.com/ocs/contract/auth/v1\"><requestDC><Correlation_ID xsi:nil=\"true\" xmlns=\"http://eDell.dell.com/ocs/schema/v1\" /><LoggedInUser_ID xsi:nil=\"true\" xmlns=\"http://eDell.dell.com/ocs/schema/v1\" /><IsRightsRequired xmlns=\"http://eDell.dell.com/ocs/schema/v1\">true</IsRight"
+// 		"sRequired><RolesMasterUpdate_DC xmlns=\"http://eDell.dell.com/ocs/schema/v1\"><LastUpdated_By>Perf_User@Dell.com </LastUpdated_By><LastUpdated_Date xsi:nil=\"true\" /><Application_ID>06F7D08A-5FA2-4849-A9D9-0C6B62F5627F</Application_ID><Application_Name_AdditionalDC xsi:nil=\"true\" /><IsActive>true</IsActive><PropertyMasterUpdateDC_List xsi:nil=\"true\" /><Role_Code xsi:nil=\"true\" /><Role_Description>Customer site-wide admin1</Role_Description><Role_ID>84B8AF06-4EF2-4F80-9401-7D021772FE6F</Role_ID><Role_Name>SiteAdmin1</Role_Name></RolesMasterUpdate_DC></requestDC></GetAllRolesBySearch></soap:Body></soap:Envelope>",
+// 		LAST);
+//     lr_end_transaction(lr_eval_string(lr_eval_string("{MName}")), LR_AUTO);
+//     }
+    
+   
+    
+
+// GetAllRightsBySearch()
+// {
+//
+//
+// 	web_reg_find("Text=<s:Fault>", "Fail=Found", LAST);
+// 		web_add_header("SOAPAction", "http://eDell.dell.com/ocs/contract/auth/v1/IRolesService/GetAllRightsBySearch");
+//         web_reg_save_param("Fault", "LB=<s:Fault>", "RB=</s:Fault>", "Notfound=warning", "Ord=All", LAST);
+//
+//         lr_start_transaction(lr_eval_string(lr_eval_string("{MName}")));
+//
+//         web_custom_request("web_custom_request",
+// 		"URL=http://u4vmolmemsvcs31:1000/authorizationservice/V1/RolesService.svc",
+// 		"Method=POST",
+// 		"TargetFrame=",
+// 		"Resource=0",
+// 		"Referer=",
+// 		"Body=<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:wsa=\"http://schemas.xmlsoap.org/ws/2004/03/addressing\"><soap:Header><wsa:Action>http://eDell.dell.com/ocs/contract/auth/v1/IRolesService/GetAllRightsBySearch</wsa:Action><wsa:MessageID>uuid:ffed65a8-0856-4068-b5c0-89909c29bd1d</wsa:MessageID><wsa:ReplyTo><wsa:Address>http://schemas.xmlsoap.org/ws/2004/03/addressing/role/anonymous</wsa:Address></wsa:ReplyTo><wsa:To>http://u4vmolmemsvcs31:1000/authorizationservice/V1/RolesService.svc</wsa:To></soap:Header><soap:Body><GetAllRightsBySearch xmlns=\"http://eDell.dell.com/ocs/contract/auth/v1\"><requestDC><Correlation_ID xsi:nil=\"true\" xmlns=\"http://eDell.dell.com/ocs/schema/v1\" /><LoggedInUser_ID xsi:nil=\"true\" xmlns=\"http://eDell.dell.com/ocs/schema/v1\" /><PropertyMasterUpdate_DC xmlns=\"http://eDell.dell.com/ocs/schema/v1\"><Las"
+// 		"tUpdated_By>Perf_User@Dell.com </LastUpdated_By><LastUpdated_Date xsi:nil=\"true\" /><Application_ID>06F7D08A-5FA2-4849-A9D9-0C6B62F5627F</Application_ID><Application_Name_AdditionalDC xsi:nil=\"true\" /><IsActive>true</IsActive><Property_ID>AF605555-77EF-4F3B-983C-EE96A8B6BFF2</Property_ID><Property_Metadata xsi:nil=\"true\" /><Property_Name>Save Equote1</Property_Name></PropertyMasterUpdate_DC></requestDC></GetAllRightsBySearch></soap:Body></soap:Envelope>",
+// 		LAST);
+//
+//     lr_end_transaction(lr_eval_string(lr_eval_string("{MName}")), LR_AUTO);
+// }
+// GetAllApplicationsBySearch()
+// {
+//
+//
+// 	web_reg_find("Text=<s:Fault>", "Fail=Found", LAST);
+// 		web_add_header("SOAPAction", "http://eDell.dell.com/ocs/contract/auth/v1/IRolesService/GetAllApplicationsBySearch");
+//         web_reg_save_param("Fault", "LB=<s:Fault>", "RB=</s:Fault>", "Notfound=warning", "Ord=All", LAST);
+//
+//         lr_start_transaction(lr_eval_string(lr_eval_string("{MName}")));
+//
+// 	web_custom_request("web_custom_request",
+// 		"URL=http://u4vmolmemsvcs31:1000/authorizationservice/V1/RolesService.svc",
+// 		"Method=POST",
+// 		"TargetFrame=",
+// 		"Resource=0",
+// 		"Referer=",
+// 		"Body=<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:wsa=\"http://schemas.xmlsoap.org/ws/2004/03/addressing\"><soap:Header><wsa:Action>http://eDell.dell.com/ocs/contract/auth/v1/IRolesService/GetAllApplicationsBySearch</wsa:Action><wsa:MessageID>uuid:ce29685b-9626-46b0-b311-d91d8ae38c30</wsa:MessageID><wsa:ReplyTo><wsa:Address>http://schemas.xmlsoap.org/ws/2004/03/addressing/role/anonymous</wsa:Address></wsa:ReplyTo><wsa:To>http://u4vmolmemsvcs31:1000/authorizationservice/V1/RolesService.svc</wsa:To></soap:Header><soap:Body><GetAllApplicationsBySearch xmlns=\"http://eDell.dell.com/ocs/contract/auth/v1\"><requestDC><Correlation_ID xsi:nil=\"true\" xmlns=\"http://eDell.dell.com/ocs/schema/v1\" /><LoggedInUser_ID xsi:nil=\"true\" xmlns=\"http://eDell.dell.com/ocs/schema/v1\" /><ApplicationMasterUpdate_DC xmlns=\"http://eDell.dell.com/ocs/s"
+// 		"chema/v1\"><LastUpdated_By>Perf_User@Dell.com </LastUpdated_By><LastUpdated_Date xsi:nil=\"true\" /><Application_Desc>Premier Portal Roles/Rights1</Application_Desc><Application_ID>06F7D08A-5FA2-4849-A9D9-0C6B62F5627F</Application_ID><Application_Name>Premier Portal1</Application_Name><IsActive>true</IsActive></ApplicationMasterUpdate_DC><CreatedDateCreatedBy_DC xmlns=\"http://eDell.dell.com/ocs/schema/v1\"><Created_By>Perf_User@Dell.com </Created_By><Created_Date xsi:nil=\"true\" /></CreatedDateCreatedBy_DC></requestDC></GetAllApplicationsBySearch></soap:Body></soap:Envelope>",
+// 		LAST);
+//
+//     lr_end_transaction(lr_eval_string(lr_eval_string("{MName}")), LR_AUTO);
+// }
+
+ 
+
+ 

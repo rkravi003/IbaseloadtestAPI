@@ -1,0 +1,2 @@
+[Hosts]
+localhost=C:\Multirunner\ibase_update1\localhost_1.eve

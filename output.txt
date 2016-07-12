@@ -1,0 +1,289 @@
+Virtual User Script started at : 7/11/2016 8:38:28 PM
+Starting action vuser_init.
+Web Turbo Replay of LoadRunner 12.53.0 for Windows 2012 R2; build 1203 (Jul 11 2016 19:13:20)  	[MsgId: MMSG-26983]
+Run mode: HTML  	[MsgId: MMSG-26993]
+Replay user agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0)  	[MsgId: MMSG-26988]
+Run-Time Settings file: "C:\Multirunner\ibase_update1\\default.cfg"  	[MsgId: MMSG-27141]
+Vuser directory: "C:\Multirunner\ibase_update1"  	[MsgId: MMSG-27052]
+Vuser output directory: "C:\Multirunner\ibase_update1"  	[MsgId: MMSG-27050]
+Operating system's current working directory: "c:\multirunner\ibase_update1"  	[MsgId: MMSG-27048]
+UTC (GMT) start date/time   : 2016-07-12 03:38:28  	[MsgId: MMSG-26992]
+LOCAL start date/time       : 2016-07-11 20:38:28  	[MsgId: MMSG-26991]
+Local daylight-Savings-Time : Yes  	[MsgId: MMSG-26990]
+Some of the Run-Time Settings:  	[MsgId: MMSG-27142]
+    Download non-HTML resources: Yes  	[MsgId: MMSG-27018]
+    Verification checks: No  	[MsgId: MMSG-27017]
+    Convert from/to UTF-8: No  	[MsgId: MMSG-27016]
+    Simulate a new user each iteration: Yes  	[MsgId: MMSG-27009]
+    Non-critical item errors as warnings: Yes  	[MsgId: MMSG-27008]
+    HTTP errors as warnings: No  	[MsgId: MMSG-27007]
+    WinInet replay instead of Sockets: No  	[MsgId: MMSG-27006]
+    HTTP version: 1.1  	[MsgId: MMSG-27005]
+    Keep-Alive HTTP connections: Yes  	[MsgId: MMSG-27004]
+    Max self Meta refresh updates: 2  	[MsgId: MMSG-27003]
+    No proxy is used (direct connection to the Internet)  	[MsgId: MMSG-27171]
+    DNS caching: No  	[MsgId: MMSG-27035]
+    Simulate browser cache: Yes  	[MsgId: MMSG-27034]
+        Cache URLs requiring content (e.g., HTMLs): Yes  	[MsgId: MMSG-27033]
+            Additional URLs requiring content: None  	[MsgId: MMSG-27032]
+        Check for newer versions every visit to the page: No  	[MsgId: MMSG-27031]
+    Page download timeout (sec): 120  	[MsgId: MMSG-27030]
+    Resource Page Timeout is a Warning: No  	[MsgId: MMSG-27029]
+    ContentCheck enabled: Yes  	[MsgId: MMSG-27028]
+    ContentCheck script-level file: "C:\Multirunner\ibase_update1\LrwiAedScript.xml"  	[MsgId: MMSG-27027]
+    Enable Web Page Breakdown: Yes  	[MsgId: MMSG-27026]
+    Enable connection data points: Yes  	[MsgId: MMSG-27023]
+    Process socket after reschedule: Yes  	[MsgId: MMSG-27022]
+    Snapshot on error: No  	[MsgId: MMSG-27021]
+    Define each step as a transaction: No  	[MsgId: MMSG-27020]
+    Read beyond Content-Length: No  	[MsgId: MMSG-26994]
+    Parse HTML Content-Type: TEXT  	[MsgId: MMSG-26999]
+    Graph hits per second and HTTP status codes: Yes  	[MsgId: MMSG-26998]
+    Graph response bytes per second: Yes  	[MsgId: MMSG-26997]
+    Graph pages per second: No  	[MsgId: MMSG-26996]
+    Web recorder version ID: 8  	[MsgId: MMSG-26995]
+Ending action vuser_init.
+Running Vuser...
+Starting iteration 1.
+Maximum number of concurrent connections per server: 2  	[MsgId: MMSG-26989]
+Starting action Action.
+Action.c(29): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(29): Warning -26594: The header being added may cause unpredictable results if applied to ALL the URLs generated on behalf of the next script function. It will apply to the primary URL only.  	[MsgId: MWAR-26594]
+Action.c(29): "Authorization: 568235ee1cc237000100000109942eb663df4ee66fd7bae3e513ebca" header registered for adding to requests from the immediately following Action function  	[MsgId: MMSG-26506]
+Action.c(29): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(30): web_set_sockets_option started  	[MsgId: MMSG-26355]
+Action.c(30): web_set_sockets_option was successful  	[MsgId: MMSG-26392]
+Action.c(31): web_set_sockets_option started  	[MsgId: MMSG-26355]
+Action.c(31): web_set_sockets_option was successful  	[MsgId: MMSG-26392]
+Action.c(32): web_set_sockets_option started  	[MsgId: MMSG-26355]
+Action.c(32): web_set_sockets_option was successful  	[MsgId: MMSG-26392]
+Action.c(36): Notify: Next row for parameter ReqMix = 1 [table  = ReqMix].
+Action.c(36): Notify: Parameter Substitution: parameter "ReqMix" =  "1"
+Action.c(71): web_save_header started  	[MsgId: MMSG-26355]
+Action.c(71): web_save_header was successful  	[MsgId: MMSG-26392]
+Action.c(73): Notify: Parameter Substitution: parameter "MName" =  "ibasedetail"
+Action.c(73): Notify: Transaction "ibasedetail" started.
+Action.c(75): Notify: Parameter Substitution: parameter "MName" =  "ibasedetail"
+Action.c(75): web_custom_request("ibasedetail") started  	[MsgId: MMSG-26355]
+Action.c(75): Notify: Getting new value for parameter 'purl': table = '.\purl.dat' column = '0' row = '1'.
+Action.c(75): Notify: Parameter Substitution: parameter "purl" =  "https://devapigateway.sndbx.junipercloud.net/ibase/rest/"
+Action.c(75): Notify: Parameter Substitution: parameter "detailsid" =  "10000000002"
+Action.c(75): t=3858ms: Connecting [0] to host 10.78.34.64:443  	[MsgId: MMSG-26000]
+Action.c(75): t=3929ms: Connected socket [0] from 10.76.3.186:45944 to 10.78.34.64:443 in 71 ms  	[MsgId: MMSG-26000]
+Action.c(75): t=4974ms: Trying to set SNI with servername devapigateway.sndbx.junipercloud.net  	[MsgId: MMSG-26000]
+Action.c(75): t=4974ms: Setting SNI was succesfull  	[MsgId: MMSG-26000]
+Action.c(75): t=5108ms: 316-byte request headers for "https://devapigateway.sndbx.junipercloud.net/ibase/rest/ibasedetail/10000000002" (RelFrameId=1, Internal ID=1)
+Action.c(75):     GET /ibase/rest/ibasedetail/10000000002 HTTP/1.1\r\n
+Action.c(75):     Authorization: 568235ee1cc237000100000109942eb663df4ee66fd7bae3e513ebca\r\n
+Action.c(75):     User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0)\r\n
+Action.c(75):     Accept-Encoding: gzip, deflate\r\n
+Action.c(75):     Accept: */*\r\n
+Action.c(75):     Connection: Keep-Alive\r\n
+Action.c(75):     Host: devapigateway.sndbx.junipercloud.net\r\n
+Action.c(75):     \r\n
+Action.c(75): t=5356ms: 247-byte response headers for "https://devapigateway.sndbx.junipercloud.net/ibase/rest/ibasedetail/10000000002" (RelFrameId=1, Internal ID=1)
+Action.c(75):     HTTP/1.1 404 Not Found\r\n
+Action.c(75):     Content-Type: application/json\r\n
+Action.c(75):     Date: Tue, 12 Jul 2016 03:38:37 GMT\r\n
+Action.c(75):     Server: Apache-Coyote/1.1\r\n
+Action.c(75):     X-Ratelimit-Limit: -1\r\n
+Action.c(75):     X-Ratelimit-Remaining: -1\r\n
+Action.c(75):     X-Ratelimit-Reset: 1467697808\r\n
+Action.c(75):     Content-Length: 70\r\n
+Action.c(75):     Connection: keep-alive\r\n
+Action.c(75):     \r\n
+Action.c(75): Notify: Saving Parameter "headerVal = HTTP/1.1 404 Not Found\r\nContent-Type: application/json\r\nDate: Tue, 12 Jul 2016 03:38:37 GMT\r\nServer: Apache-Coyote/1.1\r\nX-Ratelimit-Limit: -1\r\nX-Ratelimit-Remaining: -1\r\nX-Ratelimit-Reset: 1467697808\r\nContent-Length: 70\r\nConnection: keep-alive\r\n\r\n".
+Action.c(75): t=5367ms: 70-byte response body for "https://devapigateway.sndbx.junipercloud.net/ibase/rest/ibasedetail/10000000002" (RelFrameId=1, Internal ID=1)
+Action.c(75):     {"type":"Error","message":"Ibase equipment id  10000000002 not found"}
+Action.c(75): Warning -26627: HTTP Status-Code=404 (Not Found) for "https://devapigateway.sndbx.junipercloud.net/ibase/rest/ibasedetail/10000000002"  	[MsgId: MWAR-26627]
+Action.c(75): t=5367ms: Closing connection [0] to devapigateway.sndbx.junipercloud.net after receiving status code 404  	[MsgId: MMSG-26000]
+Action.c(75): t=5367ms: Closed connection [0] to devapigateway.sndbx.junipercloud.net:443 after completing 0 request(s)  	[MsgId: MMSG-26000]
+Action.c(75): t=5368ms: Request done "https://devapigateway.sndbx.junipercloud.net/ibase/rest/ibasedetail/10000000002"  	[MsgId: MMSG-26000]
+Action.c(75): web_custom_request("ibasedetail") highest severity level was "warning", 70 body bytes, 247 header bytes  	[MsgId: MMSG-26388]
+Action.c(85): Notify: Parameter Substitution: parameter "MName" =  "ibasedetail"
+Action.c(85): Notify: Transaction "ibasedetail" ended with a "Pass" status (Duration: 1.8309 Wasted Time: 1.2154).
+Action.c(86): Notify: Parameter Substitution: parameter "headerVal" =  "HTTP/1.1 404 Not Found\r\nContent-Type: application/json\r\nDate: Tue, 12 Jul 2016 03:38:37 GMT\r\nServer: Apache-Coyote/1.1\r\nX-Ratelimit-Limit: -1\r\nX-Ratelimit-Remaining: -1\r\nX-Ratelimit-Reset: 1467697808\r\nContent-Length: 70\r\nConnection: keep-alive\r\n\r\n"
+Ending action Action.
+Ending iteration 1.
+Starting iteration 2.
+Resetting all proxy auto-configuration information  	[MsgId: MMSG-26000]
+Notify: Next row for parameter waranty_id = 2 [table  = waranty_id].
+Notify: Getting new value for parameter 'waranty_id': table = '.\waranty_id.dat' column = '0' row = '2'.
+Notify: Next row for parameter MName = 2 [table  = MName].
+Notify: Getting new value for parameter 'MName': table = '.\MName.dat' column = '0' row = '2'.
+Notify: Next row for parameter partnerid = 2 [table  = partnerid].
+Notify: Getting new value for parameter 'partnerid': table = '.\partnerid' column = '0' row = '2'.
+Notify: Next row for parameter detailsid = 2 [table  = detailsid].
+Notify: Getting new value for parameter 'detailsid': table = '.\detailsid.dat' column = '0' row = '2'.
+Notify: Next row for parameter ReqMix = 2 [table  = ReqMix].
+Notify: Getting new value for parameter 'ReqMix': table = '.\MName.dat' column = '1' row = '2'.
+Starting action Action.
+Action.c(29): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(29): Warning -26594: The header being added may cause unpredictable results if applied to ALL the URLs generated on behalf of the next script function. It will apply to the primary URL only.  	[MsgId: MWAR-26594]
+Action.c(29): "Authorization: 568235ee1cc237000100000109942eb663df4ee66fd7bae3e513ebca" header registered for adding to requests from the immediately following Action function  	[MsgId: MMSG-26506]
+Action.c(29): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(30): web_set_sockets_option started  	[MsgId: MMSG-26355]
+Action.c(30): web_set_sockets_option was successful  	[MsgId: MMSG-26392]
+Action.c(31): web_set_sockets_option started  	[MsgId: MMSG-26355]
+Action.c(31): web_set_sockets_option was successful  	[MsgId: MMSG-26392]
+Action.c(32): web_set_sockets_option started  	[MsgId: MMSG-26355]
+Action.c(32): web_set_sockets_option was successful  	[MsgId: MMSG-26392]
+Action.c(36): Notify: Next row for parameter ReqMix = 2 [table  = ReqMix].
+Action.c(36): Notify: Parameter Substitution: parameter "ReqMix" =  "2"
+Action.c(124): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(124): Warning -26594: The header being added may cause unpredictable results if applied to ALL the URLs generated on behalf of the next script function. It will apply to the primary URL only.  	[MsgId: MWAR-26594]
+Action.c(124): Warning -26592: A header of the same name has been added already. This header is added anyway.  	[MsgId: MWAR-26592]
+Action.c(124): "Authorization: 568235ee1cc237000100000109942eb663df4ee66fd7bae3e513ebca" header registered for adding to requests from the immediately following Action function  	[MsgId: MMSG-26506]
+Action.c(124): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(125): web_save_header started  	[MsgId: MMSG-26355]
+Action.c(125): web_save_header was successful  	[MsgId: MMSG-26392]
+Action.c(127): Notify: Parameter Substitution: parameter "MName" =  "ibasepartner"
+Action.c(127): Notify: Transaction "ibasepartner" started.
+Action.c(129): Notify: Parameter Substitution: parameter "MName" =  "ibasepartner"
+Action.c(129): web_custom_request("ibasepartner") started  	[MsgId: MMSG-26355]
+Action.c(129): Notify: Next row for parameter purl = 1 [table  = purl].
+Action.c(129): Notify: Getting new value for parameter 'purl': table = '.\purl.dat' column = '0' row = '1'.
+Action.c(129): Notify: Parameter Substitution: parameter "purl" =  "https://devapigateway.sndbx.junipercloud.net/ibase/rest/"
+Action.c(129): Notify: Parameter Substitution: parameter "partnerid" =  "10000000000"
+Action.c(129): t=5475ms: Connecting [0] to host 10.78.34.64:443  	[MsgId: MMSG-26000]
+Action.c(129): t=5538ms: Connected socket [0] from 10.76.3.186:45950 to 10.78.34.64:443 in 63 ms  	[MsgId: MMSG-26000]
+Action.c(129): t=5539ms: Trying to set SNI with servername devapigateway.sndbx.junipercloud.net  	[MsgId: MMSG-26000]
+Action.c(129): t=5539ms: Setting SNI was succesfull  	[MsgId: MMSG-26000]
+Action.c(129): t=5667ms: 390-byte request headers for "https://devapigateway.sndbx.junipercloud.net/ibase/rest/ibasepartner/10000000000" (RelFrameId=1, Internal ID=2)
+Action.c(129):     GET /ibase/rest/ibasepartner/10000000000 HTTP/1.1\r\n
+Action.c(129):     Authorization: 568235ee1cc237000100000109942eb663df4ee66fd7bae3e513ebca\r\n
+Action.c(129):     Authorization: 568235ee1cc237000100000109942eb663df4ee66fd7bae3e513ebca\r\n
+Action.c(129):     User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0)\r\n
+Action.c(129):     Accept-Encoding: gzip, deflate\r\n
+Action.c(129):     Accept: */*\r\n
+Action.c(129):     Connection: Keep-Alive\r\n
+Action.c(129):     Host: devapigateway.sndbx.junipercloud.net\r\n
+Action.c(129):     \r\n
+Action.c(129): t=5826ms: 242-byte response headers for "https://devapigateway.sndbx.junipercloud.net/ibase/rest/ibasepartner/10000000000" (RelFrameId=1, Internal ID=2)
+Action.c(129):     HTTP/1.1 200 OK\r\n
+Action.c(129):     Content-Type: application/json\r\n
+Action.c(129):     Date: Tue, 12 Jul 2016 03:38:37 GMT\r\n
+Action.c(129):     Server: Apache-Coyote/1.1\r\n
+Action.c(129):     X-Ratelimit-Limit: -1\r\n
+Action.c(129):     X-Ratelimit-Remaining: -1\r\n
+Action.c(129):     X-Ratelimit-Reset: 1467697808\r\n
+Action.c(129):     Content-Length: 1098\r\n
+Action.c(129):     Connection: keep-alive\r\n
+Action.c(129):     \r\n
+Action.c(129): Notify: Saving Parameter "headerVal = HTTP/1.1 200 OK\r\nContent-Type: application/json\r\nDate: Tue, 12 Jul 2016 03:38:37 GMT\r\nServer: Apache-Coyote/1.1\r\nX-Ratelimit-Limit: -1\r\nX-Ratelimit-Remaining: -1\r\nX-Ratelimit-Reset: 1467697808\r\nContent-Length: 1098\r\nConnection: keep-alive\r\n\r\n".
+Action.c(129): t=5828ms: 1098-byte response body for "https://devapigateway.sndbx.junipercloud.net/ibase/rest/ibasepartner/10000000000" (RelFrameId=1, Internal ID=2)
+Action.c(129):     [{"equipment_id":"10000000000","material_num":"ACX1000-DC","serial_num":"HT0212425404","pa
+Action.c(129):     rtner_no":"0100509286","partner_function":"00000001","partner_function_name":"Sold-To Part
+Action.c(129):     y"},{"equipment_id":"10000000000","material_num":"ACX1000-DC","serial_num":"HT0212425404",
+Action.c(129):     "partner_no":"0101242234","partner_function":"00000002","partner_function_name":"Ship-To P
+Action.c(129):     arty"},{"equipment_id":"10000000000","material_num":"ACX1000-DC","serial_num":"HT021242540
+Action.c(129):     4","partner_no":"0101242234","partner_function":"00000003","partner_function_name":"Bill-T
+Action.c(129):     o Party"},{"equipment_id":"10000000000","material_num":"ACX1000-DC","serial_num":"HT021242
+Action.c(129):     5404","partner_no":"0100566890","partner_function":"ZE000001","partner_function_name":"End
+Action.c(129):      User"},{"equipment_id":"10000000000","material_num":"ACX1000-DC","serial_num":"HT02124254
+Action.c(129):     04","partner_no":"0100566890","partner_function":"ZI000002","partner_function_name":"Insta
+Action.c(129):     lled At"},{"equipment_id":"10000000000","material_num":"ACX1000-DC","serial_num":"HT021242
+Action.c(129):     5404","partner_no":"0100509286","partner_function":"ZPOS0001","partner_function_name":"JN 
+Action.c(129):     POS Distributor"}]
+Action.c(129): t=5829ms: Request done "https://devapigateway.sndbx.junipercloud.net/ibase/rest/ibasepartner/10000000000"  	[MsgId: MMSG-26000]
+Action.c(129): web_custom_request("ibasepartner") was successful, 1098 body bytes, 242 header bytes  	[MsgId: MMSG-26386]
+Action.c(137): Notify: Parameter Substitution: parameter "MName" =  "ibasepartner"
+Action.c(137): Notify: Transaction "ibasepartner" ended with a "Pass" status (Duration: 0.3770 Wasted Time: 0.0029).
+Action.c(138): Notify: Parameter Substitution: parameter "headerVal" =  "HTTP/1.1 200 OK\r\nContent-Type: application/json\r\nDate: Tue, 12 Jul 2016 03:38:37 GMT\r\nServer: Apache-Coyote/1.1\r\nX-Ratelimit-Limit: -1\r\nX-Ratelimit-Remaining: -1\r\nX-Ratelimit-Reset: 1467697808\r\nContent-Length: 1098\r\nConnection: keep-alive\r\n\r\n"
+Action.c(141): Notify: Parameter Substitution: parameter "MName" =  "ibasepartner"
+Action.c(141): Notify: Parameter Substitution: parameter "date" =  "20:38:30"
+Action.c(141): Notify: Saving Parameter "DirPath = C:\Error\ibasepartner_20:38:30.txt".
+Action.c(143): Notify: Parameter Substitution: parameter "headerVal" =  "HTTP/1.1 200 OK\r\nContent-Type: application/json\r\nDate: Tue, 12 Jul 2016 03:38:37 GMT\r\nServer: Apache-Coyote/1.1\r\nX-Ratelimit-Limit: -1\r\nX-Ratelimit-Remaining: -1\r\nX-Ratelimit-Reset: 1467697808\r\nContent-Length: 1098\r\nConnection: keep-alive\r\n\r\n"
+Ending action Action.
+Ending iteration 2.
+Starting iteration 3.
+t=5850ms: Closed connection [0] to devapigateway.sndbx.junipercloud.net:443 after completing 1 request(s)  	[MsgId: MMSG-26000]
+Resetting all proxy auto-configuration information  	[MsgId: MMSG-26000]
+Notify: Next row for parameter waranty_id = 3 [table  = waranty_id].
+Notify: Getting new value for parameter 'waranty_id': table = '.\waranty_id.dat' column = '0' row = '3'.
+Notify: Next row for parameter MName = 3 [table  = MName].
+Notify: Getting new value for parameter 'MName': table = '.\MName.dat' column = '0' row = '3'.
+Notify: Next row for parameter partnerid = 3 [table  = partnerid].
+Notify: Getting new value for parameter 'partnerid': table = '.\partnerid' column = '0' row = '3'.
+Notify: Next row for parameter detailsid = 3 [table  = detailsid].
+Notify: Getting new value for parameter 'detailsid': table = '.\detailsid.dat' column = '0' row = '3'.
+Notify: Next row for parameter ReqMix = 3 [table  = ReqMix].
+Notify: Getting new value for parameter 'ReqMix': table = '.\MName.dat' column = '1' row = '3'.
+Starting action Action.
+Action.c(29): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(29): Warning -26594: The header being added may cause unpredictable results if applied to ALL the URLs generated on behalf of the next script function. It will apply to the primary URL only.  	[MsgId: MWAR-26594]
+Action.c(29): "Authorization: 568235ee1cc237000100000109942eb663df4ee66fd7bae3e513ebca" header registered for adding to requests from the immediately following Action function  	[MsgId: MMSG-26506]
+Action.c(29): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(30): web_set_sockets_option started  	[MsgId: MMSG-26355]
+Action.c(30): web_set_sockets_option was successful  	[MsgId: MMSG-26392]
+Action.c(31): web_set_sockets_option started  	[MsgId: MMSG-26355]
+Action.c(31): web_set_sockets_option was successful  	[MsgId: MMSG-26392]
+Action.c(32): web_set_sockets_option started  	[MsgId: MMSG-26355]
+Action.c(32): web_set_sockets_option was successful  	[MsgId: MMSG-26392]
+Action.c(36): Notify: Next row for parameter ReqMix = 3 [table  = ReqMix].
+Action.c(36): Notify: Parameter Substitution: parameter "ReqMix" =  "3"
+Action.c(176): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(176): Warning -26594: The header being added may cause unpredictable results if applied to ALL the URLs generated on behalf of the next script function. It will apply to the primary URL only.  	[MsgId: MWAR-26594]
+Action.c(176): Warning -26592: A header of the same name has been added already. This header is added anyway.  	[MsgId: MWAR-26592]
+Action.c(176): "Authorization: 568235ee1cc237000100000109942eb663df4ee66fd7bae3e513ebca" header registered for adding to requests from the immediately following Action function  	[MsgId: MMSG-26506]
+Action.c(176): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(177): web_save_header started  	[MsgId: MMSG-26355]
+Action.c(177): web_save_header was successful  	[MsgId: MMSG-26392]
+Action.c(178): Notify: Parameter Substitution: parameter "MName" =  "ibasewarranty"
+Action.c(178): Notify: Transaction "ibasewarranty" started.
+Action.c(180): Notify: Parameter Substitution: parameter "MName" =  "ibasewarranty"
+Action.c(180): web_custom_request("ibasewarranty") started  	[MsgId: MMSG-26355]
+Action.c(180): Notify: Next row for parameter purl = 1 [table  = purl].
+Action.c(180): Notify: Getting new value for parameter 'purl': table = '.\purl.dat' column = '0' row = '1'.
+Action.c(180): Notify: Parameter Substitution: parameter "purl" =  "https://devapigateway.sndbx.junipercloud.net/ibase/rest/"
+Action.c(180): Notify: Parameter Substitution: parameter "waranty_id" =  "10000000000"
+Action.c(180): t=5890ms: Connecting [0] to host 10.78.34.64:443  	[MsgId: MMSG-26000]
+Action.c(180): t=5948ms: Connected socket [0] from 10.76.3.186:45955 to 10.78.34.64:443 in 58 ms  	[MsgId: MMSG-26000]
+Action.c(180): t=5948ms: Trying to set SNI with servername devapigateway.sndbx.junipercloud.net  	[MsgId: MMSG-26000]
+Action.c(180): t=5948ms: Setting SNI was succesfull  	[MsgId: MMSG-26000]
+Action.c(180): t=6072ms: 391-byte request headers for "https://devapigateway.sndbx.junipercloud.net/ibase/rest/ibasewarranty/10000000000" (RelFrameId=1, Internal ID=3)
+Action.c(180):     GET /ibase/rest/ibasewarranty/10000000000 HTTP/1.1\r\n
+Action.c(180):     Authorization: 568235ee1cc237000100000109942eb663df4ee66fd7bae3e513ebca\r\n
+Action.c(180):     Authorization: 568235ee1cc237000100000109942eb663df4ee66fd7bae3e513ebca\r\n
+Action.c(180):     User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0)\r\n
+Action.c(180):     Accept-Encoding: gzip, deflate\r\n
+Action.c(180):     Accept: */*\r\n
+Action.c(180):     Connection: Keep-Alive\r\n
+Action.c(180):     Host: devapigateway.sndbx.junipercloud.net\r\n
+Action.c(180):     \r\n
+Action.c(180): t=6139ms: 241-byte response headers for "https://devapigateway.sndbx.junipercloud.net/ibase/rest/ibasewarranty/10000000000" (RelFrameId=1, Internal ID=3)
+Action.c(180):     HTTP/1.1 200 OK\r\n
+Action.c(180):     Content-Type: application/json\r\n
+Action.c(180):     Date: Tue, 12 Jul 2016 03:38:37 GMT\r\n
+Action.c(180):     Server: Apache-Coyote/1.1\r\n
+Action.c(180):     X-Ratelimit-Limit: -1\r\n
+Action.c(180):     X-Ratelimit-Remaining: -1\r\n
+Action.c(180):     X-Ratelimit-Reset: 1467697808\r\n
+Action.c(180):     Content-Length: 541\r\n
+Action.c(180):     Connection: keep-alive\r\n
+Action.c(180):     \r\n
+Action.c(180): Notify: Saving Parameter "headerVal = HTTP/1.1 200 OK\r\nContent-Type: application/json\r\nDate: Tue, 12 Jul 2016 03:38:37 GMT\r\nServer: Apache-Coyote/1.1\r\nX-Ratelimit-Limit: -1\r\nX-Ratelimit-Remaining: -1\r\nX-Ratelimit-Reset: 1467697808\r\nContent-Length: 541\r\nConnection: keep-alive\r\n\r\n".
+Action.c(180): t=6141ms: 541-byte response body for "https://devapigateway.sndbx.junipercloud.net/ibase/rest/ibasewarranty/10000000000" (RelFrameId=1, Internal ID=3)
+Action.c(180):     [{"equipment_id":"10000000000","material_num":"ACX1000-DC","serial_num":"HT0212425404","wa
+Action.c(180):     rranty_id":"WTY00001","warranty_start_Date":"2016-01-28","warranty_end_Date":"2017-04-26"}
+Action.c(180):     ,{"equipment_id":"10000000000","material_num":"ACX1000-DC","serial_num":"HT0212425404","wa
+Action.c(180):     rranty_id":"WTY00003","warranty_start_Date":"2016-01-28","warranty_end_Date":"2016-05-26"}
+Action.c(180):     ,{"equipment_id":"10000000000","material_num":"ACX1000-DC","serial_num":"HT0212425404","wa
+Action.c(180):     rranty_id":"WTY00005","warranty_start_Date":"2016-01-28","warranty_end_Date":"2016-04-26"}
+Action.c(180):     ]
+Action.c(180): t=6141ms: Request done "https://devapigateway.sndbx.junipercloud.net/ibase/rest/ibasewarranty/10000000000"  	[MsgId: MMSG-26000]
+Action.c(180): web_custom_request("ibasewarranty") was successful, 541 body bytes, 241 header bytes  	[MsgId: MMSG-26386]
+Action.c(188): Notify: Parameter Substitution: parameter "MName" =  "ibasewarranty"
+Action.c(188): Notify: Transaction "ibasewarranty" ended with a "Pass" status (Duration: 0.2739 Wasted Time: 0.0031).
+Action.c(189): Notify: Parameter Substitution: parameter "headerVal" =  "HTTP/1.1 200 OK\r\nContent-Type: application/json\r\nDate: Tue, 12 Jul 2016 03:38:37 GMT\r\nServer: Apache-Coyote/1.1\r\nX-Ratelimit-Limit: -1\r\nX-Ratelimit-Remaining: -1\r\nX-Ratelimit-Reset: 1467697808\r\nContent-Length: 541\r\nConnection: keep-alive\r\n\r\n"
+Action.c(192): Notify: Parameter Substitution: parameter "MName" =  "ibasewarranty"
+Action.c(192): Notify: Parameter Substitution: parameter "date" =  "20:38:31"
+Action.c(192): Notify: Saving Parameter "DirPath = C:\Error\ibasewarranty_20:38:31.txt".
+Action.c(194): Notify: Parameter Substitution: parameter "headerVal" =  "HTTP/1.1 200 OK\r\nContent-Type: application/json\r\nDate: Tue, 12 Jul 2016 03:38:37 GMT\r\nServer: Apache-Coyote/1.1\r\nX-Ratelimit-Limit: -1\r\nX-Ratelimit-Remaining: -1\r\nX-Ratelimit-Reset: 1467697808\r\nContent-Length: 541\r\nConnection: keep-alive\r\n\r\n"
+Ending action Action.
+Ending iteration 3.
+Ending Vuser...
+Starting action vuser_end.
+Ending action vuser_end.
+Vuser Terminated.
+t=6243ms: Closed connection [0] to devapigateway.sndbx.junipercloud.net:443 after completing 1 request(s)  	[MsgId: MMSG-26000]

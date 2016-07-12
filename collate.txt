@@ -1,0 +1,5 @@
+[Diagnostics]
+Status=-1
+[Collate Recovery]
+Scenario=C:\Multirunner\ibase_update1\5users_2mins.lrs
+Completed=0

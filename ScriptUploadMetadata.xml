@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VugenScriptMetadata>
+  <ScriptName>ibase_update1</ScriptName>
+  <Protocol>Web - HTTP/HTML</Protocol>
+  <ActionFiles>
+    <FileEntry Name="vuser_init.c" Filter="2" />
+    <FileEntry Name="Action.c" Filter="2" />
+    <FileEntry Name="vuser_end.c" Filter="2" />
+  </ActionFiles>
+  <GeneralFiles>
+    <FileEntry Name="ibase_update1.usr" Filter="4" />
+    <FileEntry Name="default.cfg" Filter="4" />
+    <FileEntry Name="default.usp" Filter="4" />
+    <FileEntry Name="ibase_update1.prm" Filter="2" />
+    <FileEntry Name="globals.h" Filter="2" />
+    <FileEntry Name="detailsid.dat" Filter="2" />
+    <FileEntry Name="partnerid" Filter="2" />
+    <FileEntry Name="MName.dat" Filter="2" />
+    <FileEntry Name="purl.dat" Filter="2" />
+    <FileEntry Name="ScriptUploadMetadata.xml" Filter="2" />
+    <FileEntry Name="Bookmarks.xml" Filter="2" />
+    <FileEntry Name="Breakpoints.xml" Filter="2" />
+    <FileEntry Name="CompilerLogMetadata.xml" Filter="2" />
+    <FileEntry Name="ReplaySummaryReport.xml" Filter="2" />
+    <FileEntry Name="UserTasks.xml" Filter="2" />
+    <FileEntry Name="waranty_id.dat" Filter="2" />
+    <FileEntry Name="combined_ibase_update1.c" Filter="2" />
+    <FileEntry Name="pre_cci.c" Filter="2" />
+    <FileEntry Name=".gitlab-ci.yml" Filter="1" />
+    <FileEntry Name="10125510644.idx" Filter="1" />
+    <FileEntry Name="20673031944.idx" Filter="1" />
+    <FileEntry Name="25429592844.idx" Filter="1" />
+    <FileEntry Name="4857096444.idx" Filter="1" />
+    <FileEntry Name="5users_2mins.lrs" Filter="1" />
+    <FileEntry Name="7511144144.idx" Filter="1" />
+    <FileEntry Name="Action" Filter="1" />
+    <FileEntry Name="ApplicationID" Filter="1" />
+    <FileEntry Name="IbaseUpdatedscript.prm" Filter="1" />
+    <FileEntry Name="ibase_update1.c.pickle" Filter="1" />
+    <FileEntry Name="ibase_update1.ci" Filter="1" />
+    <FileEntry Name="ibase_update1.sdf" Filter="1" />
+    <FileEntry Name="logfile.log" Filter="1" />
+    <FileEntry Name="mdrv.log" Filter="1" />
+    <FileEntry Name="mdrv_cmd.txt" Filter="1" />
+    <FileEntry Name="NewParam.dat" Filter="1" />
+    <FileEntry Name="options.txt" Filter="1" />
+    <FileEntry Name="output.txt" Filter="1" />
+    <FileEntry Name="PTAUTO.bat" Filter="1" />
+    <FileEntry Name="ptopic_id.txt" Filter="1" />
+    <FileEntry Name="replay.har" Filter="1" />
+    <FileEntry Name="shunra.shunra" Filter="1" />
+    <FileEntry Name="ThumbnailsCache.tmp" Filter="1" />
+    <FileEntry Name="TidyUp.cmd" Filter="1" />
+    <FileEntry Name="_encode.ini" Filter="1" />
+    <FileEntry Name="result1\" Filter="1" />
+  </GeneralFiles>
+</VugenScriptMetadata>
